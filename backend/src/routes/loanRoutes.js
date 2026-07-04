@@ -4,6 +4,6 @@ import { applyLoan, getLoans } from "../controllers/loanController.js";
 const router = express.Router();
 
 router.post("/apply", applyLoan);
-router.get("/", getLoans);
+router.get("/all", getLoans);
 
 export default router;

@@ -2,13 +2,10 @@ import mongoose from "mongoose";
 
 const loanSchema = new mongoose.Schema(
   {
-    userId: String,
-    amount: Number,
-    period: Number,
-    status: {
-      type: String,
-      default: "pending",
-    },
+    firstName: String,
+    lastName: String,
+    email: String,
+    phone: String,
   },
   { timestamps: true }
 );
