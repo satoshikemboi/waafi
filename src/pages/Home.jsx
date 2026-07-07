@@ -76,10 +76,11 @@ export default function Home() {
             className="text-center text-3xl text-gray-900 mb-2"
             style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
           >
-            Get an Instant Loan
+            Hel Deg Deg Ah
           </h2>
+
           <p className="text-center text-gray-500 text-sm mb-6">
-            Fast approval &bull; Competitive pricing &bull; Flexible terms
+            Ansixin Deg Deg ah &bull; Qiime Macquul ah &bull; Shuruudo Fudud
           </p>
 
           <div className="bg-gray-50 rounded-xl p-5">
@@ -87,16 +88,17 @@ export default function Home() {
               className="text-xl text-gray-900 mb-5"
               style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
             >
-              Loan Calculation
+              Xisaabinta Amaahda
             </h3>
 
             {/* Loan Amount */}
             <div className="flex justify-between items-baseline mb-3">
-              <span className="text-gray-700">Loan Amount</span>
+              <span className="text-gray-700">Lacagta Amaahda</span>
               <span className="text-green-600 font-semibold text-xl">
                 ${loanAmount.toLocaleString()}
               </span>
             </div>
+
             <input
               type="range"
               min="100"
@@ -105,10 +107,8 @@ export default function Home() {
               value={loanAmount}
               onChange={(e) => setLoanAmount(Number(e.target.value))}
               className="slider-green w-full"
-              style={{
-                background: `linear-gradient(to right, #d9dbdd 0%, #d9dbdd ${amountPct}%, #d9dbdd ${amountPct}%, #d9dbdd 100%)`,
-              }}
             />
+
             <div className="flex justify-between text-sm text-gray-500 mt-2 mb-6">
               <span>$100</span>
               <span>$5,000</span>
@@ -116,11 +116,12 @@ export default function Home() {
 
             {/* Loan Period */}
             <div className="flex justify-between items-baseline mb-3">
-              <span className="text-gray-700">Loan Period</span>
+              <span className="text-gray-700">Muddada Amaahda</span>
               <span className="text-green-600 font-semibold text-xl">
-                {loanPeriod} months
+                {loanPeriod} bilood
               </span>
             </div>
+
             <input
               type="range"
               min="6"
@@ -130,14 +131,18 @@ export default function Home() {
               onChange={(e) => setLoanPeriod(Number(e.target.value))}
               className="slider-green w-full"
             />
+
             <div className="flex justify-between text-sm text-gray-500 mt-2 mb-6">
-              <span>6 months</span>
-              <span>60 months</span>
+              <span>6 bilood</span>
+              <span>60 bilood</span>
             </div>
 
             {/* Monthly Payment */}
             <div className="bg-white border border-gray-200 rounded-xl px-5 py-5 flex justify-between items-center">
-              <span className="text-gray-700 text-lg">Monthly Payment</span>
+              <span className="text-gray-700 text-lg">
+                Lacagta Bishii La Bixinayo
+              </span>
+
               <span
                 className="text-green-600 font-bold text-3xl"
                 style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
@@ -149,19 +154,19 @@ export default function Home() {
 
           {/* Apply button */}
           <Link
-  to="/step1"
-  className="w-full text-white text-lg py-4 rounded-xl mt-6 tracking-wide"
-  style={{
-    background: "linear-gradient(to right, #a3dd3f, #57b129)",
-    fontFamily: "Arial, sans-serif",
-    display: "block",
-    textAlign: "center",
-    textDecoration: "none",
-    padding: "16px",
-  }}
->
-  APPLY NOW
-</Link>
+            to="/step1"
+            className="w-full text-white text-lg py-4 rounded-xl mt-6 tracking-wide"
+            style={{
+              background: "linear-gradient(to right, #a3dd3f, #57b129)",
+              fontFamily: "Arial, sans-serif",
+              display: "block",
+              textAlign: "center",
+              textDecoration: "none",
+              padding: "16px",
+            }}
+          >
+            CODSO AMA AH
+          </Link>
 
           {/* Features */}
           <div className="mt-7 space-y-5">
@@ -172,11 +177,14 @@ export default function Home() {
                   className="text-gray-900 text-lg"
                   style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
                 >
-                  Fast Approval
+                  Ansixin Deg Deg ah
                 </span>
-                <span className="text-gray-400 text-sm">Within 24 hours</span>
+                <span className="text-gray-400 text-sm">
+                  24 saac gudahood
+                </span>
               </div>
             </div>
+
             <div className="flex items-center gap-4">
               <span className="text-3xl leading-none">💰</span>
               <div className="flex items-baseline gap-2">
@@ -184,9 +192,12 @@ export default function Home() {
                   className="text-gray-900 text-lg"
                   style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
                 >
-                  Low Price
+                  Qiimo Hoose
                 </span>
-                <span className="text-gray-400 text-sm">Starting at 18%</span>
+
+                <span className="text-gray-400 text-sm">
+                  Laga bilaabo 18%
+                </span>
               </div>
             </div>
           </div>

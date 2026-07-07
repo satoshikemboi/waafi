@@ -20,13 +20,12 @@ export default function Step2() {
     setError("");
 
     if (!firstName || !lastName || !email || !phone) {
-      setError("Please fill in all fields.");
+      setError("Fadlan buuxi dhammaan meelaha bannaan.");
       return;
     }
 
     const fullPhone = `+252${phone}`;
 
-    // Save to Context
     updateLoanData({
       firstName,
       lastName,
@@ -61,7 +60,7 @@ export default function Step2() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.message || "Submission failed");
+        throw new Error(data.message || "Gudbinta codsiga way fashilantay");
       }
 
       navigate("/step3");
@@ -83,11 +82,11 @@ export default function Step2() {
               fontFamily: "Georgia, 'Times New Roman', serif",
             }}
           >
-            Loan Application
+            Codsiga Amaahda
           </h2>
 
           <p className="text-center text-gray-400 text-sm mb-6">
-            Step 2 of 3
+            Tallaabada 2 ee 3
           </p>
 
           {/* Progress */}
@@ -105,7 +104,7 @@ export default function Step2() {
 
           {/* First Name */}
           <label className="block mb-2 text-gray-800">
-            First Name
+            Magaca Hore
           </label>
 
           <input
@@ -117,7 +116,7 @@ export default function Step2() {
 
           {/* Last Name */}
           <label className="block mb-2 text-gray-800">
-            Last Name
+            Magaca Dambe
           </label>
 
           <input
@@ -129,7 +128,7 @@ export default function Step2() {
 
           {/* Email */}
           <label className="block mb-2 text-gray-800">
-            Email Address
+            Cinwaanka Email-ka
           </label>
 
           <input
@@ -141,12 +140,12 @@ export default function Step2() {
 
           {/* Phone */}
           <label className="block mb-2 text-gray-800">
-            Phone Number
+            Lambarka Taleefanka
           </label>
 
           <div className="flex gap-3 mb-2">
             <div className="bg-gray-100 border border-gray-300 rounded-xl px-4 py-3.5">
-              +252
+              +253
             </div>
 
             <input
@@ -158,14 +157,14 @@ export default function Step2() {
           </div>
 
           <p className="text-xs text-gray-400 mb-6">
-            Example: 612345678
+            Tusaale: 612345678
           </p>
 
           <button
             disabled
             className="w-full bg-gray-200 text-gray-500 py-4 rounded-xl mb-4 cursor-not-allowed"
           >
-            SO THAT
+            SOO NOQO
           </button>
 
           <button
@@ -178,7 +177,7 @@ export default function Step2() {
               opacity: loading ? 0.7 : 1,
             }}
           >
-            {loading ? "Submitting..." : "NEXT STEP"}
+            {loading ? "Waa la dirayaa..." : "TALLAABADA XIGTA"}
           </button>
 
         </div>

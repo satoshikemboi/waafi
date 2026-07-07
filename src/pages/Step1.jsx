@@ -7,13 +7,13 @@ export default function Step1() {
   const { loanData, updateLoanData } = useLoan();
 
   const [loanType, setLoanType] = useState(
-    loanData.loanType || "Personal Loan"
+    loanData.loanType || "Amaah Shakhsiyeed"
   );
   const [loanAmount, setLoanAmount] = useState(
     loanData.loanAmount || "1000"
   );
   const [loanPeriod, setLoanPeriod] = useState(
-    loanData.loanPeriod || "12 Months"
+    loanData.loanPeriod || "12 Bilood"
   );
   const [purpose, setPurpose] = useState(loanData.purpose || "");
 
@@ -47,11 +47,11 @@ export default function Step1() {
               fontFamily: "Georgia, 'Times New Roman', serif",
             }}
           >
-            Loan Application
+            Codsiga Amaahda
           </h2>
 
           <p className="text-center text-gray-400 text-sm mb-6">
-            Step 1 of 3
+            Tallaabada 1 ee 3
           </p>
 
           {/* Progress */}
@@ -63,7 +63,7 @@ export default function Step1() {
 
           {/* Loan Type */}
           <label className="block text-gray-800 mb-2">
-            Loan Type
+            Nooca Amaahda
           </label>
 
           <div className="relative mb-6">
@@ -72,10 +72,10 @@ export default function Step1() {
               onChange={(e) => setLoanType(e.target.value)}
               className="w-full appearance-none border border-gray-300 rounded-xl px-4 py-3.5 text-gray-800 text-base bg-white focus:outline-none focus:ring-2 focus:ring-green-400"
             >
-              <option>Personal Loan</option>
-              <option>Business Loan</option>
-              <option>Emergency Loan</option>
-              <option>Education Loan</option>
+              <option>Amaah Shakhsiyeed</option>
+              <option>Amaah Ganacsi</option>
+              <option>Amaah Deg Deg ah</option>
+              <option>Amaah Waxbarasho</option>
             </select>
 
             <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">
@@ -85,7 +85,7 @@ export default function Step1() {
 
           {/* Loan Amount */}
           <label className="block text-gray-800 mb-2">
-            Loan Amount ($)
+            Lacagta Amaahda ($)
           </label>
 
           <input
@@ -97,7 +97,7 @@ export default function Step1() {
 
           {/* Loan Period */}
           <label className="block text-gray-800 mb-2">
-            Loan Period
+            Muddada Amaahda
           </label>
 
           <div className="relative mb-6">
@@ -106,11 +106,11 @@ export default function Step1() {
               onChange={(e) => setLoanPeriod(e.target.value)}
               className="w-full appearance-none border border-gray-300 rounded-xl px-4 py-3.5 text-gray-800 text-base bg-white focus:outline-none focus:ring-2 focus:ring-green-400"
             >
-              <option>6 Months</option>
-              <option>12 Months</option>
-              <option>24 Months</option>
-              <option>36 Months</option>
-              <option>60 Months</option>
+              <option>6 Bilood</option>
+              <option>12 Bilood</option>
+              <option>24 Bilood</option>
+              <option>36 Bilood</option>
+              <option>60 Bilood</option>
             </select>
 
             <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">
@@ -120,14 +120,14 @@ export default function Step1() {
 
           {/* Purpose */}
           <label className="block text-gray-800 mb-2">
-            Purpose of the Loan
+            Ujeeddada Amaahda
           </label>
 
           <textarea
             rows={4}
             value={purpose}
             onChange={(e) => setPurpose(e.target.value)}
-            placeholder="What will you use the loan for?"
+            placeholder="Maxaad u isticmaali doontaa lacagta amaahda?"
             className="w-full border border-gray-300 rounded-xl px-4 py-3.5 text-gray-800 text-base mb-8 resize-y placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400"
           />
 
@@ -141,7 +141,7 @@ export default function Step1() {
               fontFamily: "Arial, sans-serif",
             }}
           >
-            NEXT STEP
+            TALLAABADA XIGTA
           </button>
         </div>
       </div>
