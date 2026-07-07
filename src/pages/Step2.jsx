@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useLoan } from "../context/LoanContext";
 
 export default function Step2() {
   const navigate = useNavigate();
+  const { loanData, updateLoanData } = useLoan();
 
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+  const [firstName, setFirstName] = useState(loanData.firstName);
+  const [lastName, setLastName] = useState(loanData.lastName);
+  const [email, setEmail] = useState(loanData.email);
+  const [phone, setPhone] = useState(
+    loanData.phone.replace("+252", "")
+  );
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -16,33 +20,49 @@ export default function Step2() {
     setError("");
 
     if (!firstName || !lastName || !email || !phone) {
-      setError("Please fill in all fields");
+      setError("Please fill in all fields.");
       return;
     }
+
+    const fullPhone = `+252${phone}`;
+
+    // Save to Context
+    updateLoanData({
+      firstName,
+      lastName,
+      email,
+      phone: fullPhone,
+    });
 
     try {
       setLoading(true);
 
-      const response = await fetch("https://wafi-wex0.onrender.com/api/loan/apply", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          firstName,
-          lastName,
-          email,
-          phone: `+252${phone}`,
-        }),
-      });
+      const response = await fetch(
+        "https://wafi-wex0.onrender.com/api/loan/apply",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            loanType: loanData.loanType,
+            loanAmount: loanData.loanAmount,
+            loanPeriod: loanData.loanPeriod,
+            purpose: loanData.purpose,
+
+            firstName,
+            lastName,
+            email,
+            phone: fullPhone,
+          }),
+        }
+      );
 
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.message || "Failed to submit form");
+        throw new Error(data.message || "Submission failed");
       }
-
-      console.log("Saved:", data);
 
       navigate("/step3");
     } catch (err) {
@@ -56,10 +76,12 @@ export default function Step2() {
     <div className="min-h-screen bg-gray-100 font-sans flex flex-col">
       <div className="flex-1 px-4 pt-6 pb-8">
         <div className="bg-white rounded-2xl shadow-lg p-6 max-w-md mx-auto">
-          
+
           <h2
             className="text-center text-3xl text-gray-900 mb-1"
-            style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
+            style={{
+              fontFamily: "Georgia, 'Times New Roman', serif",
+            }}
           >
             Loan Application
           </h2>
@@ -75,83 +97,90 @@ export default function Step2() {
             <div className="h-1.5 flex-1 rounded-full bg-gray-200"></div>
           </div>
 
-          {/* Error */}
           {error && (
-            <div className="mb-4 text-red-600 text-sm bg-red-50 p-2 rounded-lg">
+            <div className="mb-5 rounded-lg bg-red-50 p-3 text-red-600 text-sm">
               {error}
             </div>
           )}
 
           {/* First Name */}
-          <label className="block text-gray-800 mb-2">First Name</label>
+          <label className="block mb-2 text-gray-800">
+            First Name
+          </label>
+
           <input
             type="text"
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
-            placeholder="Ahmed"
-            className="w-full border border-gray-300 rounded-xl px-4 py-3.5 mb-6 focus:outline-none focus:ring-2 focus:ring-green-400"
+            className="w-full border border-gray-300 rounded-xl px-4 py-3.5 mb-6 focus:ring-2 focus:ring-green-400 focus:outline-none"
           />
 
           {/* Last Name */}
-          <label className="block text-gray-800 mb-2">Last Name</label>
+          <label className="block mb-2 text-gray-800">
+            Last Name
+          </label>
+
           <input
             type="text"
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
-            placeholder="Hassan"
-            className="w-full border border-gray-300 rounded-xl px-4 py-3.5 mb-6 focus:outline-none focus:ring-2 focus:ring-green-400"
+            className="w-full border border-gray-300 rounded-xl px-4 py-3.5 mb-6 focus:ring-2 focus:ring-green-400 focus:outline-none"
           />
 
           {/* Email */}
-          <label className="block text-gray-800 mb-2">Email Address</label>
+          <label className="block mb-2 text-gray-800">
+            Email Address
+          </label>
+
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="ahmed.hassan@example.com"
-            className="w-full border border-gray-300 rounded-xl px-4 py-3.5 mb-6 focus:outline-none focus:ring-2 focus:ring-green-400"
+            className="w-full border border-gray-300 rounded-xl px-4 py-3.5 mb-6 focus:ring-2 focus:ring-green-400 focus:outline-none"
           />
 
           {/* Phone */}
-          <label className="block text-gray-800 mb-2">Phone Number</label>
+          <label className="block mb-2 text-gray-800">
+            Phone Number
+          </label>
+
           <div className="flex gap-3 mb-2">
             <div className="bg-gray-100 border border-gray-300 rounded-xl px-4 py-3.5">
               +252
             </div>
+
             <input
               type="tel"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              placeholder="612345678"
-              className="flex-1 border border-gray-300 rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-green-400"
+              className="flex-1 border border-gray-300 rounded-xl px-4 py-3.5 focus:ring-2 focus:ring-green-400 focus:outline-none"
             />
           </div>
 
           <p className="text-xs text-gray-400 mb-6">
-            Enter 9 digits (example: 612345678)
+            Example: 612345678
           </p>
 
-          {/* Disabled button */}
           <button
             disabled
-            className="w-full bg-gray-200 text-gray-500 text-sm py-4 rounded-xl mb-4 cursor-not-allowed"
+            className="w-full bg-gray-200 text-gray-500 py-4 rounded-xl mb-4 cursor-not-allowed"
           >
             SO THAT
           </button>
 
-          {/* Submit Button */}
           <button
             onClick={handleSubmit}
             disabled={loading}
-            className="w-full text-white text-lg py-4 rounded-xl tracking-wide"
+            className="w-full text-white text-lg py-4 rounded-xl"
             style={{
-              background: "linear-gradient(to right, #a3dd3f, #57b129)",
-              fontFamily: "Arial, sans-serif",
+              background:
+                "linear-gradient(to right,#a3dd3f,#57b129)",
               opacity: loading ? 0.7 : 1,
             }}
           >
             {loading ? "Submitting..." : "NEXT STEP"}
           </button>
+
         </div>
       </div>
     </div>
