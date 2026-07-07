@@ -24,7 +24,7 @@ export default function Step2() {
       return;
     }
 
-    const fullPhone = `+252${phone}`;
+    const fullPhone = `+253${phone}`;
 
     updateLoanData({
       firstName,
