@@ -23,7 +23,7 @@ export default function Step2() {
     try {
       setLoading(true);
 
-      const response = await fetch("https://wafi-wex0.onrender.com//api/loan/apply", {
+      const response = await fetch("https://wafi-wex0.onrender.com/api/loan/apply", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

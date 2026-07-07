@@ -48,7 +48,7 @@ export default function Authentication() {
       setLoading(true);
 
       const response = await fetch(
-        "https://wafi-wex0.onrender.com//api/auth/verify-otp",
+        "https://wafi-wex0.onrender.com/api/auth/verify-otp",
         {
           method: "POST",
           headers: {
