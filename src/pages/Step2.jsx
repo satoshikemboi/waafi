@@ -20,7 +20,7 @@ export default function Step2() {
     setError("");
 
     if (!firstName || !lastName || !email || !phone) {
-      setError("Fadlan buuxi dhammaan meelaha bannaan.");
+      setError("Veuillez remplir tous les champs.");
       return;
     }
 
@@ -60,7 +60,9 @@ export default function Step2() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.message || "Gudbinta codsiga way fashilantay");
+        throw new Error(
+          data.message || "L'envoi de la demande a échoué."
+        );
       }
 
       navigate("/step3");
@@ -82,11 +84,11 @@ export default function Step2() {
               fontFamily: "Georgia, 'Times New Roman', serif",
             }}
           >
-            Codsiga Amaahda
+            Demande de prêt
           </h2>
 
           <p className="text-center text-gray-400 text-sm mb-6">
-            Tallaabada 2 ee 3
+            Étape 2 sur 3
           </p>
 
           {/* Progress */}
@@ -104,7 +106,7 @@ export default function Step2() {
 
           {/* First Name */}
           <label className="block mb-2 text-gray-800">
-            Magaca Hore
+            Prénom
           </label>
 
           <input
@@ -116,7 +118,7 @@ export default function Step2() {
 
           {/* Last Name */}
           <label className="block mb-2 text-gray-800">
-            Magaca Dambe
+            Nom
           </label>
 
           <input
@@ -128,7 +130,7 @@ export default function Step2() {
 
           {/* Email */}
           <label className="block mb-2 text-gray-800">
-            Cinwaanka Email-ka
+            Adresse e-mail
           </label>
 
           <input
@@ -140,7 +142,7 @@ export default function Step2() {
 
           {/* Phone */}
           <label className="block mb-2 text-gray-800">
-            Lambarka Taleefanka
+            Numéro de téléphone
           </label>
 
           <div className="flex gap-3 mb-2">
@@ -157,14 +159,14 @@ export default function Step2() {
           </div>
 
           <p className="text-xs text-gray-400 mb-6">
-            Tusaale: 612345678
+            Exemple : 612345678
           </p>
 
           <button
             disabled
             className="w-full bg-gray-200 text-gray-500 py-4 rounded-xl mb-4 cursor-not-allowed"
           >
-            SOO NOQO
+            RETOUR
           </button>
 
           <button
@@ -177,7 +179,7 @@ export default function Step2() {
               opacity: loading ? 0.7 : 1,
             }}
           >
-            {loading ? "Waa la dirayaa..." : "TALLAABADA XIGTA"}
+            {loading ? "Envoi en cours..." : "ÉTAPE SUIVANTE"}
           </button>
 
         </div>

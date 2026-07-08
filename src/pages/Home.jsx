@@ -76,11 +76,11 @@ export default function Home() {
             className="text-center text-3xl text-gray-900 mb-2"
             style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
           >
-            Hel Deg Deg Ah
+            Prêt Rapide
           </h2>
 
           <p className="text-center text-gray-500 text-sm mb-6">
-            Ansixin Deg Deg ah &bull; Qiime Macquul ah &bull; Shuruudo Fudud
+            Approbation rapide &bull; Taux abordables &bull; Conditions simples
           </p>
 
           <div className="bg-gray-50 rounded-xl p-5">
@@ -88,12 +88,12 @@ export default function Home() {
               className="text-xl text-gray-900 mb-5"
               style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
             >
-              Xisaabinta Amaahda
+              Calculateur de prêt
             </h3>
 
             {/* Loan Amount */}
             <div className="flex justify-between items-baseline mb-3">
-              <span className="text-gray-700">Lacagta Amaahda</span>
+              <span className="text-gray-700">Montant du prêt</span>
               <span className="text-green-600 font-semibold text-xl">
                 ${loanAmount.toLocaleString()}
               </span>
@@ -116,9 +116,9 @@ export default function Home() {
 
             {/* Loan Period */}
             <div className="flex justify-between items-baseline mb-3">
-              <span className="text-gray-700">Muddada Amaahda</span>
+              <span className="text-gray-700">Durée du prêt</span>
               <span className="text-green-600 font-semibold text-xl">
-                {loanPeriod} bilood
+                {loanPeriod} mois
               </span>
             </div>
 
@@ -133,14 +133,14 @@ export default function Home() {
             />
 
             <div className="flex justify-between text-sm text-gray-500 mt-2 mb-6">
-              <span>6 bilood</span>
-              <span>60 bilood</span>
+              <span>6 mois</span>
+              <span>60 mois</span>
             </div>
 
             {/* Monthly Payment */}
             <div className="bg-white border border-gray-200 rounded-xl px-5 py-5 flex justify-between items-center">
               <span className="text-gray-700 text-lg">
-                Lacagta Bishii La Bixinayo
+                Paiement mensuel
               </span>
 
               <span
@@ -165,7 +165,7 @@ export default function Home() {
               padding: "16px",
             }}
           >
-            CODSO AMA AH
+            DEMANDER UN PRÊT
           </Link>
 
           {/* Features */}
@@ -177,10 +177,10 @@ export default function Home() {
                   className="text-gray-900 text-lg"
                   style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
                 >
-                  Ansixin Deg Deg ah
+                  Approbation rapide
                 </span>
                 <span className="text-gray-400 text-sm">
-                  24 saac gudahood
+                  En moins de 24 heures
                 </span>
               </div>
             </div>
@@ -192,11 +192,11 @@ export default function Home() {
                   className="text-gray-900 text-lg"
                   style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
                 >
-                  Qiimo Hoose
+                  Taux avantageux
                 </span>
 
                 <span className="text-gray-400 text-sm">
-                  Laga bilaabo 18%
+                  À partir de 18 %
                 </span>
               </div>
             </div>

